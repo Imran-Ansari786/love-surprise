@@ -4,154 +4,480 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> I LOVE YOU ❤️</title>
+<meta name="theme-color" content="#160713">
+<title>For My Love ❤️</title>
 
 <style>
-* { box-sizing: border-box; }
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    font-family: Georgia, serif;
-    background: radial-gradient(circle, #380b32, #100014 70%);
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;color:#fff5fa;
+ font-family:Georgia,serif;
+ background:radial-gradient(ellipse at top,#5b163c,#20091f 50%,#0b0611);
+ min-height:100vh;overflow-x:hidden
 }
-
-.card {
-    width: 92%;
-    max-width: 500px;
-    padding: 25px 15px;
-    position: relative;
-    z-index: 2;
+button,a{font:inherit}
+a{color:inherit;text-decoration:none}
+:root{--pink:#ff5c98;--line:rgba(255,123,174,.3)}
+.nav{
+ position:sticky;top:0;z-index:10;
+ display:flex;align-items:center;justify-content:space-between;
+ flex-wrap:wrap;gap:14px;padding:14px 5%;
+ background:#100711eF;backdrop-filter:blur(12px);
+ border-bottom:1px solid var(--line)
 }
-
-h1 {
-    color: #ff9acb;
-    font-size: clamp(28px, 7vw, 42px);
-    text-shadow: 0 0 20px #ff167f;
+.brand{font-size:23px;font-style:italic;color:#ffb5d0}
+.navlinks{display:flex;gap:15px;flex-wrap:wrap;font:13px Arial}
+.navlinks a:hover{color:var(--pink)}
+button,.primary,.secondary{
+ border:1px solid #ff7eaa;border-radius:30px;
+ padding:12px 18px;background:linear-gradient(135deg,#ff3978,#bd1958);
+ color:white;cursor:pointer
 }
-
-p {
-    color: #ffe0ef;
-    font-size: 18px;
-    line-height: 1.6;
+.secondary{background:transparent}
+.hero{
+ min-height:530px;display:grid;place-items:center;text-align:center;
+ padding:65px 20px;
+ background:linear-gradient(#18081780,#100711dd),
+ radial-gradient(ellipse at center,#b52b6066,transparent 70%)
 }
-
-.heart {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 45px auto;
-    background: #ff1744;
-    transform: rotate(-45deg);
-    animation: beat 1s infinite;
-    box-shadow: 0 0 30px #ff1744, 0 0 70px #ff167f;
+.hero-content{max-width:800px}
+.eyebrow{letter-spacing:3px;color:#ffabc9;font:12px Arial}
+h1{font-size:clamp(40px,8vw,76px);font-weight:normal}
+h1 span,.pink{color:#ff75a7}
+.hero p{font-size:clamp(17px,3vw,22px);line-height:1.8;color:#ffe4ee}
+.hero-heart{font-size:65px;display:inline-block;animation:beat 1.3s infinite}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+section{padding:55px clamp(15px,4vw,45px);max-width:1200px;margin:auto}
+.section-head{text-align:center;margin-bottom:28px}
+.section-head h2{font-size:clamp(30px,5vw,43px);font-weight:normal;color:#ff9fc3}
+.section-head p{color:#eec6d6;line-height:1.7}
+.music-panel,.letter,.counter,.shayari-card,.photo-card,.story-box{
+ background:#1c0819c9;border:1px solid var(--line);
+ border-radius:18px;box-shadow:0 12px 40px #0003
 }
-
-.heart::before,
-.heart::after {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: #ff1744;
-    border-radius: 50%;
+.music-panel{
+ max-width:760px;margin:0 auto;padding:18px;
+ display:flex;align-items:center;gap:14px;flex-wrap:wrap
 }
-
-.heart::before { top: -50px; left: 0; }
-.heart::after { top: 0; left: 50px; }
-
-@keyframes beat {
-    0%, 100% { transform: rotate(-45deg) scale(1); }
-    15% { transform: rotate(-45deg) scale(1.2); }
-    30% { transform: rotate(-45deg) scale(1); }
-    45% { transform: rotate(-45deg) scale(1.12); }
-    60% { transform: rotate(-45deg) scale(1); }
+.album{width:58px;height:58px;display:grid;place-items:center;
+ border-radius:12px;background:linear-gradient(145deg,#ff7ca9,#5e123c);font-size:28px}
+.track{flex:1;min-width:150px}
+.track small{display:block;color:#e8bdce;margin-top:5px}
+.music-controls{display:flex;gap:8px}
+.music-controls button{width:42px;height:42px;padding:0;border:0}
+.hint{font:12px Arial;color:#dcb6c7}
+.shayari-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.shayari-card{padding:22px 16px;text-align:center;transition:.2s}
+.shayari-card:hover{transform:translateY(-4px);border-color:#ff77a9}
+.symbol{font-size:28px;color:#ff7dab}
+.shayari-card h3{font-size:21px;color:#ffc0d7;font-weight:normal}
+.shayari-card p{font-size:15px;line-height:1.8;white-space:pre-line}
+.letter-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.letter{padding:clamp(20px,4vw,38px);background:linear-gradient(145deg,#ffe2e8,#ffb8ce);color:#571a35}
+.letter h2{font-size:30px;font-weight:normal;color:#9e174c}
+.letter p{font-size:16px;line-height:1.9;white-space:pre-line}
+.signature{font-size:21px;font-style:italic;color:#a51c54}
+.counter{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px}
+.days{font:bold clamp(42px,7vw,65px) Arial;color:#ff4d89;margin:12px 0}
+.counter p{line-height:1.7;color:#f7ccdc}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.photo-card{padding:10px;text-align:center;overflow:hidden}
+.photo-placeholder{
+ min-height:160px;display:grid;place-items:center;border-radius:12px;
+ background:linear-gradient(135deg,#551638,#180b20);font-size:42px;color:#ff9fc3
 }
-
-button {
-    padding: 14px 25px;
-    border: none;
-    border-radius: 30px;
-    background: #ff4081;
-    color: white;
-    font-size: 17px;
-    cursor: pointer;
-    box-shadow: 0 0 20px #ff4081;
+.photo-card img{width:100%;height:190px;object-fit:cover;border-radius:12px}
+.photo-card p{color:#ffc0d7;font-style:italic}
+.story-box{padding:25px;text-align:center;line-height:1.9}
+footer{text-align:center;padding:45px 20px 65px;color:#ffb7d0}
+.float{position:fixed;bottom:-40px;pointer-events:none;z-index:20;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.16)}30%{transform:scale(1)}45%{transform:scale(1.09)}60%{transform:scale(1)}}
+@media(max-width:800px){
+ .nav{justify-content:center}
+ .navlinks{justify-content:center;width:100%}
+ .shayari-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .letter-wrap{grid-template-columns:1fr}
+ .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-
-#surprise { display: none; }
-
-.float {
-    position: fixed;
-    bottom: -40px;
-    color: #ff80ab;
-    animation: rise linear forwards;
-    pointer-events: none;
-    z-index: 1;
-}
-
-@keyframes rise {
-    to {
-        transform: translateY(-115vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-.signature {
-    color: #ff9acb;
-    font-style: italic;
+@media(max-width:480px){
+ .shayari-grid,.gallery{grid-template-columns:1fr}
+ .navlinks{gap:10px}
+ .photo-card img{height:230px}
 }
 </style>
 </head>
 
 <body>
-<div class="card">
-    <div id="intro">
-        <h1>A Letter For You 💌</h1>
-        <p>Someone has a little surprise for you...</p>
-        <button onclick="openLetter()">Open Your Letter 💖</button>
-    </div>
 
-    <div id="surprise">
-        <h1>I Love YOU ❤️</h1>
-        <div class="heart"></div>
-        <h1 id="name"> THIS IS FOR YOU </h1>
-        <p>
-            You are the most beautiful part of my world.
-            Every heartbeat reminds me of you. 💗
-        </p>
-        <p class="signature">Forever yours ❤️</p>
-    </div>
+<nav class="nav">
+ <a class="brand" href="#home">♡ For My Love</a>
+ <div class="navlinks">
+  <a href="#home">Home</a>
+  <a href="#shayari">Shayari</a>
+  <a href="#letter">Love Letter</a>
+  <a href="#gallery">Our Moments</a>
+ </div>
+ <button id="musicToggle" type="button">▶ Play Music</button>
+</nav>
+
+<header class="hero" id="home">
+ <div class="hero-content">
+  <div class="eyebrow">A LITTLE PIECE OF MY HEART, JUST FOR YOU</div>
+  <div class="hero-heart">♥</div>
+  <h1>Hey, <span id="heroName">My Love</span> ❤️</h1>
+  <p>
+   Tu meri zindagi ka woh hissa hai,<br>
+   jiske bina har khushi thodi adhoori si hai.<br>
+   <em>I choose you, today and always.</em>
+  </p>
+  <div class="actions">
+   <a class="primary" href="#letter">Open Your Love Letter 💌</a>
+   <a class="secondary" href="#shayari">Read Your Shayari 🌹</a>
+  </div>
+ </div>
+</header>
+
+<div class="music-panel">
+ <div class="album">♫</div>
+ <div class="track">
+  <strong>Our Little Love Song</strong>
+  <small id="musicStatus">Add your favourite song as music.mp3</small>
+  <p class="hint">Press play to listen to your song.</p>
+ </div>
+ <div class="music-controls">
+  <button id="playBtn" type="button" aria-label="Play or pause">▶</button>
+  <button id="muteBtn" type="button" aria-label="Mute music">♪</button>
+ </div>
+ <audio id="bgMusic" loop preload="none">
+  <source src="music.mp3" type="audio/mpeg">
+ </audio>
 </div>
 
+<section id="shayari">
+ <div class="section-head">
+  <h2>Sirf Tumhare Liye 🌹</h2>
+  <p>Har lafz mein thoda sa pyaar, har line mein tumhari yaad. ❤️</p>
+ </div>
+
+ <div class="shayari-grid">
+
+  <article class="shayari-card"><div class="symbol">♡</div><h3>Tum Meri Khushi</h3>
+   <p>Jab se tum meri zindagi mein aayi ho,
+har din ek naya khwaab laayi ho.
+Tum hanso toh dil muskuraata hai,
+tum paas ho toh sab apna sa lagta hai.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">✦</div><h3>Meri Har Dua</h3>
+   <p>Har dua mein tera naam aaye,
+har khwaab mein tera chehra muskuraye.
+Bas itni si khwahish hai meri,
+tera saath ho aur zindagi guzar jaaye.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">☾</div><h3>Chaand Se Pyaari</h3>
+   <p>Chaand bhi sharma jaaye teri roshni ke saamne,
+taare bhi jhuk jaayein teri saadgi ke saamne.
+Kya likhun tareef mein teri jaan,
+lafz kam pad jaate hain teri khoobsurti ke saamne.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">∞</div><h3>Forever & Always</h3>
+   <p>Na waqt ka darr ho, na doori ka gham,
+har mod par bas tera saath ho sanam.
+Zindagi chhoti ho ya lambi kahaani,
+meri har kahaani mein tum hi tum ho, meri jaan.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">💗</div><h3>Dil Ki Baat</h3>
+   <p>Tujhse baat ho toh din ban jaata hai,
+tera message aaye toh chehra khil jaata hai.
+Pata nahi kaisa jaadu hai tere pyaar mein,
+tera khayaal bhi dil ko sukoon de jaata hai.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">🌷</div><h3>Teri Muskaan</h3>
+   <p>Teri muskaan meri pehchaan ban gayi,
+teri khushi meri jaan ban gayi.
+Pehle toh bas din guzarte the,
+ab har subah tere naam ban gayi.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">✨</div><h3>Door Hokar Bhi</h3>
+   <p>Door ho kar bhi tu dil ke paas hai,
+meri har dhadkan ko tera ehsaas hai.
+Faasle chahe kitne bhi ho darmiyaan,
+mera dil aaj bhi sirf tere saath hai.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">🌙</div><h3>Raat Aur Tum</h3>
+   <p>Raat ki khamoshi mein tera khayaal aata hai,
+chaand ke saath tera chehra nazar aata hai.
+Neend se keh deta hoon thoda intezaar kar,
+pehle tera khwaab toh aankhon mein aata hai.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">💌</div><h3>Ek Vaada</h3>
+   <p>Vaada nahi ki har din aasaan hoga,
+par har mushkil mein mera haath tumhare haath hoga.
+Khushi ho ya udaasi, bas itna yaad rakhna,
+tum akeli nahi, tumhara saath mere saath hoga.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">🦋</div><h3>Pehli Si Feeling</h3>
+   <p>Tera naam sunte hi dil ka dhadakna,
+teri taraf dekh kar nazrein jhukna.
+Aaj bhi waisi hi feeling aati hai,
+jaise pehli baar tumse milna.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">❤️</div><h3>Meri Duniya</h3>
+   <p>Duniya ki bheed mein ek sukoon ho tum,
+meri adhuri baaton ka junoon ho tum.
+Sab kuch mil jaaye toh bhi kya chahiye,
+mere liye toh mera sab kuch ho tum.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">🌹</div><h3>Naam Tera</h3>
+   <p>Honthon pe hansi aur dil mein naam tera,
+meri har kahaani ka anjaam tera.
+Log poochhte hain khushi ki wajah,
+main muskura kar kehta hoon: pyaar hai tera.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">💫</div><h3>Khwaab</h3>
+   <p>Khwaab mein bhi tera intezaar rehta hai,
+dil ko bas tera hi khumaar rehta hai.
+Subah aankh khule toh pehli soch tum,
+raat ko aakhri khayaal bhi tum.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">🫶</div><h3>Saath Hamesha</h3>
+   <p>Haath tera ho mere haath mein,
+khushiyan saja dein har ek raat mein.
+Manzil se zyada safar pyaara hoga,
+jab tum chalogi mere saath mein.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">💖</div><h3>Simple Si Love Story</h3>
+   <p>Na chaand chahiye, na sitaaron ka jahaan,
+bas tum raho mere paas, meri jaan.
+Meri chhoti si duniya ka itna sa rule,
+tum khush raho hamesha, that is all I want for you.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">🌸</div><h3>Tumhari Aadat</h3>
+   <p>Ab aadat si ho gayi hai tumhari,
+baaton mein, khwaabon mein, yaadon mein tumhari.
+Din chahe kitna bhi busy kyun na ho,
+dil dhoondhta hai ek jhalak tumhari.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">🔥</div><h3>Ishq</h3>
+   <p>Ishq ka matlab tumse jaana hai,
+dil ka raaz tumhe batana hai.
+Har janam ki baat toh nahi jaanta,
+par is zindagi mein tumhe hi chahna hai.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">☁️</div><h3>Badal Aur Baarish</h3>
+   <p>Baarish ki boondon mein tera zikr ho,
+thandi hawa mein tera fikr ho.
+Mausam chahe badalta rahe,
+mere dil mein bas tera hi ghar ho.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">🕊️</div><h3>Sukoon</h3>
+   <p>Tumse milkar ek baat samajh aayi,
+khushi cheezon mein nahi, apno mein samayi.
+Tere saath khamoshi bhi achhi lagti hai,
+teri maujoodgi hi mere liye kaafi hai.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">💍</div><h3>Har Kal Mein Tum</h3>
+   <p>Aaj bhi tum, kal bhi tum,
+meri har dua ka pal bhi tum.
+Zindagi jahan bhi le jaaye mujhe,
+mere dil ka ghar hamesha tum.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">🥹</div><h3>Thank You, Love</h3>
+   <p>Mere saath rehne ke liye shukriya,
+mujhe samajhne ke liye shukriya.
+Main perfect nahi, par dil se kehta hoon,
+meri zindagi mein aane ke liye shukriya.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">🌈</div><h3>Har Rang Tum</h3>
+   <p>Meri duniya ke har rang mein tum,
+meri har khushi ke sang mein tum.
+Tasveer chahe kitni bhi khoobsurat ho,
+meri aankhon ka sabse haseen rang tum.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">💘</div><h3>Bas Tum</h3>
+   <p>Hazaar log mil jaayein raahon mein,
+dil ko sukoon mile bas teri baahon mein.
+Koi aur khwahish nahi hai meri,
+mera aaj bhi tum, mera kal bhi tum.</p>
+  </article>
+
+  <article class="shayari-card"><div class="symbol">⭐</div><h3>My Favourite Person</h3>
+   <p>You are my favourite hello,
+and the hardest goodbye.
+Meri har chhoti khushi mein tum,
+and my forever reason to smile.</p>
+  </article>
+
+ </div>
+</section>
+
+<section id="letter">
+ <div class="section-head">
+  <h2>A Letter From My Heart 💌</h2>
+  <p>Kuch baatein jo dil mein hamesha rehti hain.</p>
+ </div>
+
+ <div class="letter-wrap">
+  <div class="letter">
+   <h2>My Dearest <span id="letterName">Love</span> ❤️</h2>
+   <p>Tumhe shayad andaaza bhi nahi hai ki tum meri zindagi mein kitni special ho. Tumhari ek smile mera din achha bana sakti hai, aur tumhari ek baat mere dil ko sukoon de sakti hai.
+
+Main perfect nahi hoon, lekin tumhe samajhne, tumhari respect karne aur tumhare saath har din kuch achha banane ki koshish zaroor karunga.
+
+Mujhe grand promises se zyada woh chhoti-chhoti khushiyan pyaari hain jo hum saath bana sakte hain. Thank you meri life ka itna khoobsurat hissa banne ke liye.
+
+Aaj, kal aur har naye din mein, main tumhe choose karna chahta hoon. ❤️</p>
+   <p class="signature">Forever yours,<br><span id="senderName">Imran</span> ❤️</p>
+  </div>
+
+  <div class="counter">
+   <div class="hero-heart">♥</div>
+   <p class="pink">Every day, a little more love</p>
+   <div class="days" id="daysCount">∞</div>
+   <strong>Days Together 💞</strong>
+   <p id="daysNote">Set your special date in the code to count the days.</p>
+  </div>
+ </div>
+</section>
+
+<section id="gallery">
+ <div class="section-head">
+  <h2>Our Little Memories 📸</h2>
+  <p>Yahan apni favourite photos add karo.</p>
+ </div>
+
+ <div class="gallery">
+  <div class="photo-card"><div class="photo-placeholder">🌅</div><p>Our Favourite Moment</p></div>
+  <div class="photo-card"><div class="photo-placeholder">🫶</div><p>Side by Side</p></div>
+  <div class="photo-card"><div class="photo-placeholder">🌹</div><p>A Little Happiness</p></div>
+  <div class="photo-card"><div class="photo-placeholder">✨</div><p>Memories to Keep</p></div>
+  <div class="photo-card"><div class="photo-placeholder">💗</div><p>You + Me</p></div>
+  <div class="photo-card"><div class="photo-placeholder">🌙</div><p>Our Forever Story</p></div>
+ </div>
+
+ <p class="hint" style="text-align:center;margin-top:15px">
+ To add photos, replace a photo-placeholder div with
+ &lt;img src="photo1.jpg" alt="Our memory"&gt; and upload photo1.jpg
+ beside index.html.
+ </p>
+</section>
+
+<section>
+ <div class="story-box">
+  <div class="hero-heart" style="font-size:42px">♥</div>
+  <h2 class="pink" style="font-weight:normal">One Heart. One Story. You and Me.</h2>
+  <p>
+   Chahe duniya kitni bhi badal jaaye, meri wish hai ki hum ek doosre ko
+   pyaar, patience aur respect ke saath choose karte rahein.
+   <br><strong class="pink">I love you — today, tomorrow, and always. ❤️</strong>
+  </p>
+ </div>
+</section>
+
+<footer>
+ <div style="font-size:34px">♡ ♥ ♡</div>
+ <p>Made with all my heart, just for you.</p>
+ <div class="pink">— Imran ❤️</div>
+</footer>
+
 <script>
-const GIRLFRIEND = "THIS IS FOR YOU"; // Change her name here
+// PERSONALIZE THESE SETTINGS:
+const GIRLFRIEND_NAME = "My Love"; // Replace with her name
+const YOUR_NAME = "Imran";         // Replace with your name
+const SPECIAL_DATE = "";            // Example: "2025-02-14"
 
-function openLetter() {
-    document.getElementById("intro").style.display = "none";
-    document.getElementById("surprise").style.display = "block";
-    document.getElementById("name").textContent = GIRLFRIEND;
+document.getElementById("heroName").textContent = GIRLFRIEND_NAME;
+document.getElementById("letterName").textContent = GIRLFRIEND_NAME;
+document.getElementById("senderName").textContent = YOUR_NAME;
 
-    setInterval(() => {
-        const heart = document.createElement("div");
-        heart.className = "float";
-        heart.textContent = ["♥", "♡", "💗", "✨"][
-            Math.floor(Math.random() * 4)
-        ];
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.fontSize = (18 + Math.random() * 24) + "px";
-        heart.style.animationDuration = (4 + Math.random() * 4) + "s";
-        document.body.appendChild(heart);
+const audio = document.getElementById("bgMusic");
+const playBtn = document.getElementById("playBtn");
+const musicToggle = document.getElementById("musicToggle");
+const musicStatus = document.getElementById("musicStatus");
 
-        setTimeout(() => heart.remove(), 8500);
-    }, 300);
+function updateMusicButtons(){
+ const playing = !audio.paused;
+ playBtn.textContent = playing ? "Ⅱ" : "▶";
+ musicToggle.textContent = playing ? "Ⅱ Pause Music" : "▶ Play Music";
+ if(playing) musicStatus.textContent = "Now playing — your favourite song ❤️";
 }
+
+async function toggleMusic(){
+ if(audio.paused){
+  try{
+   await audio.play();
+   musicStatus.textContent = "Now playing — your favourite song ❤️";
+  }catch(error){
+   musicStatus.textContent = "Upload music.mp3 beside index.html, then press play.";
+  }
+ }else{
+  audio.pause();
+ }
+ updateMusicButtons();
+}
+
+playBtn.addEventListener("click",toggleMusic);
+musicToggle.addEventListener("click",toggleMusic);
+
+document.getElementById("muteBtn").addEventListener("click",()=>{
+ audio.muted = !audio.muted;
+ document.getElementById("muteBtn").textContent = audio.muted ? "×" : "♪";
+});
+
+audio.addEventListener("play",updateMusicButtons);
+audio.addEventListener("pause",updateMusicButtons);
+
+// Optional days-together counter
+if(SPECIAL_DATE){
+ const start = new Date(SPECIAL_DATE+"T00:00:00");
+ if(!Number.isNaN(start.getTime()) && start <= new Date()){
+  const days = Math.floor((new Date()-start)/86400000);
+  document.getElementById("daysCount").textContent = days.toLocaleString();
+  document.getElementById("daysNote").textContent =
+   "And here's to many beautiful days ahead. ❤️";
+ }
+}
+
+// Floating hearts
+const symbols = ["♥","♡","💗","✨"];
+
+function makeHeart(){
+ const el = document.createElement("span");
+ el.className = "float";
+ el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+ el.style.left = Math.random()*100+"vw";
+ el.style.fontSize = (14+Math.random()*18)+"px";
+ el.style.animationDuration = (6+Math.random()*5)+"s";
+ el.style.opacity = (0.45+Math.random()*0.5).toString();
+ document.body.appendChild(el);
+ setTimeout(()=>el.remove(),11500);
+}
+
+setInterval(makeHeart,850);
 </script>
+
 </body>
 </html>
