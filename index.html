@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: Georgia, serif;
+    background: radial-gradient(circle, #380b32, #100014 70%);
+}
+
+.card {
+    width: 92%;
+    max-width: 500px;
+    padding: 25px 15px;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    color: #ff9acb;
+    font-size: clamp(28px, 7vw, 42px);
+    text-shadow: 0 0 20px #ff167f;
+}
+
+p {
+    color: #ffe0ef;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 45px auto;
+    background: #ff1744;
+    transform: rotate(-45deg);
+    animation: beat 1s infinite;
+    box-shadow: 0 0 30px #ff1744, 0 0 70px #ff167f;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #ff1744;
+    border-radius: 50%;
+}
+
+.heart::before { top: -50px; left: 0; }
+.heart::after { top: 0; left: 50px; }
+
+@keyframes beat {
+    0%, 100% { transform: rotate(-45deg) scale(1); }
+    15% { transform: rotate(-45deg) scale(1.2); }
+    30% { transform: rotate(-45deg) scale(1); }
+    45% { transform: rotate(-45deg) scale(1.12); }
+    60% { transform: rotate(-45deg) scale(1); }
+}
+
+button {
+    padding: 14px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4081;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff4081;
+}
+
+#surprise { display: none; }
+
+.float {
+    position: fixed;
+    bottom: -40px;
+    color: #ff80ab;
+    animation: rise linear forwards;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.signature {
+    color: #ff9acb;
+    font-style: italic;
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+    <div id="intro">
+        <h1>A Letter For You 💌</h1>
+        <p>Someone has a little surprise for you...</p>
+        <button onclick="openLetter()">Open Your Letter 💖</button>
+    </div>
+
+    <div id="surprise">
+        <h1>For My Love ❤️</h1>
+        <div class="heart"></div>
+        <h1 id="name">My Love</h1>
+        <p>
+            You are the most beautiful part of my world.
+            Every heartbeat reminds me of you. 💗
+        </p>
+        <p class="signature">Forever yours ❤️</p>
+    </div>
+</div>
+
+<script>
+const GIRLFRIEND = "My Love"; // Change her name here
+
+function openLetter() {
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("surprise").style.display = "block";
+    document.getElementById("name").textContent = GIRLFRIEND;
+
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "float";
+        heart.textContent = ["♥", "♡", "💗", "✨"][
+            Math.floor(Math.random() * 4)
+        ];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (18 + Math.random() * 24) + "px";
+        heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 8500);
+    }, 300);
+}
+</script>
+</body>
+</html>
